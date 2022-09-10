@@ -3,8 +3,10 @@
 pipeline {
     agent any
     stages {
+		
         stage('Deploy') {
             steps {
+				input(message: 'Confirm Deployement to QA env', ok: 'Approve'
                 sh """ git branch """
             }
         }
