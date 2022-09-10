@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Trigger deployer-qa Jenkins Job
-      uses: admin/jenkins-action@master
+      uses: Bharat1508/drupal@qa
       with:
         url: "http://3.108.182.189:8080"
         user: "deployer"
