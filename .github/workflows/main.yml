@@ -16,3 +16,20 @@ jobs:
         user: "admin"
         token: 11f56d0f903dd3b340bafaea648da81fe0
         job: "deployer-qa"
+on:
+  pull_request:
+    branches:
+      - uat
+    types: [closed]
+jobs:
+  build:
+    name: Deploy to QA
+    runs-on: ubuntu-latest
+    steps:
+    - name: Trigger deployer-uat Jenkins Job
+      uses: appleboy/jenkins-action@master
+      with:
+        url: "http://3.108.182.189:8080"
+        user: "admin"
+        token: 11f56d0f903dd3b340bafaea648da81fe0
+        job: "deployer-uat"
