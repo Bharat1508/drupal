@@ -13,6 +13,6 @@ jobs:
       uses: appleboy/jenkins-action@master
       with:
         url: "http://3.108.182.189:8080"
-        user: "deployer"
+        user: "admin"
         token: 11f56d0f903dd3b340bafaea648da81fe0
         job: "deployer-qa"
