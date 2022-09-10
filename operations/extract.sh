@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /drupal/_data/
-git pull origin main
+git pull origin dev
