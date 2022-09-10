@@ -23,7 +23,7 @@ on:
     types: [closed]
 jobs:
   build:
-    name: Deploy to QA
+    name: Deploy to UAT
     runs-on: ubuntu-latest
     steps:
     - name: Trigger deployer-uat Jenkins Job
