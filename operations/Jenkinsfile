@@ -6,7 +6,7 @@ pipeline {
 		stage('Confirmation') {
             steps {
 				timeout(time: 60, unit: 'SECONDS') {
-				input(message: 'Confirm Deployement to QA env', ok: 'Approve')
+				input(message: 'Confirm Deployement to UAT env', ok: 'Approve')
 				}
             }
         }
