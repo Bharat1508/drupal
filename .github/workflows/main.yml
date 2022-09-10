@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Trigger deployer-qa Jenkins Job
-      uses: google-github-actions/setup-gcloud@v0
+      uses: appleboy/jenkins-action@master
       with:
         url: "http://3.108.182.189:8080"
         user: "deployer"
