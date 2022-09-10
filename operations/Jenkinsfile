@@ -4,10 +4,11 @@ pipeline {
     agent none
     stages {
 		stage('Confirmation') {
-
-			timeout(time: 60, unit: 'SECONDS') {
-				 input(message: 'Confirm Deployement to QA env', ok: 'Approve')
-			}
+            steps {
+				timeout(time: 60, unit: 'SECONDS') {
+				input(message: 'Confirm Deployement to QA env', ok: 'Approve')
+				}
+            }
         }
         stage('Deploy') {
 			agent any
