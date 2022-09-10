@@ -16,16 +16,16 @@ jobs:
         if: github.ref_name == 'qa'
         uses: appleboy/jenkins-action@master
         with:
-        url: "http://3.108.182.189:8080"
-        user: "admin"
-        token: 11f56d0f903dd3b340bafaea648da81fe0
-        job: "deployer-qa"
+         url: "http://3.108.182.189:8080"
+         user: "admin"
+         token: 11f56d0f903dd3b340bafaea648da81fe0
+         job: "deployer-qa"
       
       - name: Trigger deployer-qa Jenkins Job
         if: github.ref_name == 'uat'
         uses: appleboy/jenkins-action@master
         with:
-        url: "http://3.108.182.189:8080"
-        user: "admin"
-        token: 11f56d0f903dd3b340bafaea648da81fe0
-        job: "deployer-uat"
+         url: "http://3.108.182.189:8080"
+         user: "admin"
+         token: 11f56d0f903dd3b340bafaea648da81fe0
+         job: "deployer-uat"
