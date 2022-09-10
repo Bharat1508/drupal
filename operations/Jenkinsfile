@@ -7,13 +7,14 @@ pipeline {
             steps {
                 script {
                     if (params.service_name == 'Production') {
-                        sh """pwd
-                        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/common-key-mumbai.pem -t ubuntu@13.234.148.202 sudo sh /drupal/_data/operations/extract.sh
-                        """
+                        			echo 'Deploying in Prod Env'
                     } else if (params.service_name == 'Staging') {
 						echo 'Deploying in Staging Env'
                     } else if (params.service_name == 'Dev') {
 						echo 'Deploying in Dev Env'
+			    sh """pwd
+                        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/common-key-mumbai.pem -t ubuntu@13.234.148.202 sudo sh /drupal/_data/operations/extract.sh
+                        """
                     } else if (params.service_name == 'QA') {
 						echo 'Deploying in QA Env'
                     }  else {
