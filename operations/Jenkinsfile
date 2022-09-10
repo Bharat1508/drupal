@@ -1,12 +1,16 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent any
+    agent none
     stages {
-		
-        stage('Deploy') {
+		stage('Confirmation') {
             steps {
 				input(message: 'Confirm Deployement to QA env', ok: 'Approve')
+            }
+        }
+        stage('Deploy') {
+			agent any
+            steps {
                 sh """ git branch """
             }
         }
