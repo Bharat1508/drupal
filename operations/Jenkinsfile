@@ -8,7 +8,7 @@ pipeline {
                 script {
                     if (params.service_name == 'Production') {
                         sh """pwd
-                        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/common-key-mumbai.pem1 -t ubuntu@13.234.148.202 sudo sh /drupal/_data/operations/extract.sh
+                        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/common-key-mumbai.pem -t ubuntu@13.234.148.202 sudo sh /drupal/_data/operations/extract.sh
                         """
                     } else if (params.service_name == 'Staging') {
 						echo 'Deploying in Staging Env'
