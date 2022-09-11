@@ -1,0 +1,16 @@
+#!/usr/bin/env groovy
+
+pipeline {
+    agent any
+    stages {
+        stage('Deploy') {
+            steps {
+                script {
+                      sh """pwd
+                        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/common-key-mumbai.pem -t ubuntu@43.204.240.54 sudo sh /drupal/_data/operations/extract.sh
+                    """
+                }
+            }
+        }
+    }
+}
